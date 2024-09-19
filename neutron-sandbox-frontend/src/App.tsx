@@ -41,7 +41,6 @@ export default function App() {
         async function submit() {
             if (submitBoolean) {
                 await firstSubmit("Hello World");
-            
                 await secondSubmit("Bob", 23);
                 await thirdSubmit();
                 await fourthSubmit(Status.Success);
