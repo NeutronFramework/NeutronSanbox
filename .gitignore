@@ -1,0 +1,5 @@
+NeutronSandbox/bin
+NeutronSandbox/dist
+NeutronSandbox/.vs
+NeutronSandbox/obj
+neutron-sandbox-frontend/node_modules

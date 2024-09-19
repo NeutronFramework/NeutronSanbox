@@ -1,0 +1,6 @@
+{
+  "ProjectName": "NeutronSandbox",
+  "DotnetVersion": "net8",
+  "FrontendName": "neutron-sandbox-frontend",
+  "BackendName": "NeutronSandbox"
+}
