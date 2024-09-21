@@ -38,17 +38,10 @@ internal class Program
 #else
         application = new Application(title: "NeutronSandbox", width: 960, height: 540, webContentPath: Path.Combine(AppContext.BaseDirectory, "dist"));
 #endif
-
+        application.Center();
         // first generic type is the first parameter type of the js function you are trying to bind
         // second generic type is the output type of the js function you are trying to bind
-        application.Bind<string?, object?>("firstSubmit", (input) => {
-
-            if (input is null)
-            {
-                Console.WriteLine("input is null or undefined");
-                return null;
-            }
-            
+        application.Bind<string, object?>("firstSubmit", (input) => {
             Console.WriteLine($"\"{input}\"");
 
             return null;
@@ -57,20 +50,8 @@ internal class Program
         // first generic type is the first parameter type of the js function you are trying to bind
         // second generic type is the second parameter type of the js function you are trying to bind
         // third generic type is the output type of the js function you are trying to bind
-        application.Bind<string?, int?, object?>("secondSubmit", (name, age) =>
+        application.Bind<string, int, object?>("secondSubmit", (name, age) =>
         {
-            if (name is null)
-            {
-                Console.WriteLine("name is null or undefined");
-                return null;
-            }
-
-            if (age is null)
-            {
-                Console.WriteLine("age is null or undefined");
-                return null;
-            }
-
             Console.WriteLine($"Hi my name is {name}, i'm {age} years old!");
 
             return null;
@@ -85,7 +66,7 @@ internal class Program
         });
 
         // you get the idea
-        application.Bind<Status?, object?>("fourthSubmit", (status) =>
+        application.Bind<Status, object?>("fourthSubmit", (status) =>
         {
             Console.WriteLine($"The status are {status}");
 
@@ -94,7 +75,7 @@ internal class Program
 
 
         // you get the idea
-        application.Bind<TheMeaningOfEverything?, object?>("fifthSubmit", (theMeaningOfEverything) =>
+        application.Bind<TheMeaningOfEverything, object?>("fifthSubmit", (theMeaningOfEverything) =>
         {
             if (theMeaningOfEverything is null)
             {
@@ -123,7 +104,7 @@ internal class Program
 
 
         // you get the idea
-        application.Bind<Status?[]?, object?>("seventhSubmit", (statuses) =>
+        application.Bind<Status[]?, object?>("seventhSubmit", (statuses) =>
         {
             if (statuses is null)
             {
@@ -141,7 +122,7 @@ internal class Program
 
 
         // you get the idea
-        application.Bind<bool?[]?, object?>("eighthSubmit", (array) =>
+        application.Bind<bool[], object?>("eighthSubmit", (array) =>
         {
             if (array is null)
             {
@@ -158,7 +139,7 @@ internal class Program
         });
 
         // you get the idea
-        application.Bind<Person?[]?, string?>("ninthSubmit", (personArray) =>
+        application.Bind<Person[]?, string?>("ninthSubmit", (personArray) =>
         {
             if (personArray is null)
             {
@@ -170,12 +151,6 @@ internal class Program
 
             foreach (var person in personArray)
             {
-                if (person is null)
-                {
-                    Console.WriteLine("array is element is null or undefined");
-                    return null;
-                }
-
                 greetings.Add($"PersonArray: Hi my name is {person.Name}, i'm {person.Age} years old!");
             }
 

@@ -17,8 +17,9 @@
   
 
   <ItemGroup>
-    <PackageReference Include="Neutron" Version="0.1.8" />
+    <PackageReference Include="Neutron" Version="0.2.3" />
   </ItemGroup>
+  
 
   <Target Name="BuildFrontend">
     <Exec Command="neutroncli build --frontend" WorkingDirectory="../" />
