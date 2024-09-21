@@ -17,7 +17,7 @@
   
 
   <ItemGroup>
-    <PackageReference Include="Neutron" Version="0.2.3" />
+    <PackageReference Include="Neutron" Version="*" />
   </ItemGroup>
   
 
