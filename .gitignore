@@ -2,4 +2,5 @@ NeutronSandbox/bin
 NeutronSandbox/dist
 NeutronSandbox/.vs
 NeutronSandbox/obj
+.vs/
 neutron-sandbox-frontend/node_modules

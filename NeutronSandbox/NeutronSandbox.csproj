@@ -14,12 +14,6 @@
     <DebugSymbols>False</DebugSymbols>
     <DebugType>None</DebugType>
   </PropertyGroup>
-  
-
-  <ItemGroup>
-    <PackageReference Include="Neutron" Version="*" />
-  </ItemGroup>
-  
 
   <Target Name="BuildFrontend">
     <Exec Command="neutroncli build --frontend" WorkingDirectory="../" />
@@ -36,4 +30,8 @@
   <Target Name="CopyDistFolderOnPublish" AfterTargets="Publish" DependsOnTargets="BuildFrontend">
     <Copy SourceFiles="@(DistFiles)" DestinationFolder="$(PublishDir)dist\%(RecursiveDir)" />
   </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Neutron" Version="0.3.2" />
+  </ItemGroup>
 </Project>
